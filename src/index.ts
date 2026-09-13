@@ -1,10 +1,9 @@
-import { loadSceneCameraMap, getCameraForScene, getAllCameraNumbers } from './sceneMap';
+import { loadSceneCameraMap, getCameraForScene } from './sceneMap';
 import { CameraSocketServer } from './socketServer';
 import { ObsConnection } from './obsConnection';
 
 async function main(): Promise<void> {
   const sceneMap = loadSceneCameraMap();
-  const allCameraNumbers = getAllCameraNumbers(sceneMap);
 
   const socketServer = new CameraSocketServer();
   socketServer.start();
@@ -18,7 +17,7 @@ async function main(): Promise<void> {
     }
 
     console.log(`Escena en programa: "${sceneName}" -> cámara ${cameraNumber}`);
-    socketServer.broadcastActiveCamera(cameraNumber, allCameraNumbers);
+    socketServer.broadcastActiveCamera(cameraNumber);
   });
 
   await obs.connect();
