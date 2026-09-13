@@ -1,0 +1,20 @@
+{
+  "name": "obs-status-psp",
+  "version": "1.0.0",
+  "description": "Detecta el cambio de escena de programa en OBS y notifica a celulares conectados (uno por cámara) mediante sockets propios.",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "ts-node src/index.ts"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "obs-websocket-js": "^5.0.6"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4"
+  }
+}
