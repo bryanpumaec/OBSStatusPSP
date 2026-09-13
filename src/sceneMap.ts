@@ -11,3 +11,7 @@ export function loadSceneCameraMap(): SceneCameraMap {
 export function getCameraForScene(map: SceneCameraMap, sceneName: string): number | undefined {
   return map[sceneName];
 }
+
+export function getAllCameraNumbers(map: SceneCameraMap): number[] {
+  return Array.from(new Set(Object.values(map)));
+}
